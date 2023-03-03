@@ -1,0 +1,237 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FilanTech Arrange Word Game</title>
+
+  <!-- Bootstrap 5 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Custom css -->
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="filan-logo.png" alt="" width="40" height="30" class="d-inline-block align-text-top">
+          <span class="logo-name">FilanTech</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li> -->
+          </ul>
+          <!-- <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- conatniner start -->
+  <div class="container mt-5">
+    <div class="row m-auto">
+      <div class="col text-center">
+        <a class="navbar-brandb d-block d-sm-block d-md-none" href="#">
+          <img src="body_img.png" alt="" width="300" height="100" class="d-inline-block align-text-top">
+
+        </a>
+
+        <a class="navbar-brand d-none d-md-block" href="#">
+          <img src="body_img.png" alt="" class="d-inline-block align-text-top">
+
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- conatniner end -->
+
+  <div  class="container-md mt-5  p-4">
+    <div class="row justify-content-end">
+      <div id="incorrect_answer" class="col-6  text-center incorrect_answer">
+        Your answer is incorrect
+      </div>
+
+      <div id="enter_answer" class="col-6 text-center enter_answer">
+        Enter an answer
+      </div>
+
+      <div id="correct_answer" class="col-6  me-2 text-center correct_answer">
+        Your answer is correct
+      </div>
+
+      <div class="col-4 col-sm-3 col-md-3 col-lg-3 col-xl-2  dropdown text-end">
+      <button id="language-selection" class="btn btn-secondary dropdown-toggle choose-language-btn" type="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        Language
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark menu-option">
+        <li onclick="choose_language('Somali')"><a class="dropdown-item active menu-items" href="#">Somali</a></li>
+        <li onclick="choose_language('English')"><a class="dropdown-item" href="#">English</a></li>
+
+      </ul>
+    </div>
+
+  </div>
+  </div>
+
+  <div class="container-md boder border-2 question-container-main ">
+    <form action="" class="js-form">
+      <div class="row m-auto">
+        <div class="row mt-3 question-container">
+          <h6>Arrange this word (<span id="count_up">1</span>/20)</h6>
+          <div class="col question_label">
+
+            <div id="question_label_text" class="question-text">
+
+              Fahad
+
+            </div>
+          </div>
+
+
+
+          <div class="col ">
+            <input type="text" class="form-control question-input" id="answer" name="answer"
+              placeholder="Type You Answer" autofocus aria-describedby="emailHelp">
+          </div>
+        </div>
+
+      </div>
+      <div class="row mt-4 justify-content-between">
+        <div class="col-4 ">
+          <button type="button" onclick="window.location.reload()" class="btn btn-danger rounded-pill">Restart</button>
+        </div>
+
+        <div class="col-8 text-end ">
+
+          <button onclick="giveUp()" type="button" class="btn give-up-btn">Give Up</button>
+          <div id="prev_answer" class="d-none"></div>
+          <button onclick="check_ans()" type="button" id="checkAnsbtn" class="btn btn-success rounded-pill">Check
+            Answer</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container-md">
+    <div class="row text-end">
+
+      <div id="counting" class="col counting">
+        <label class="mt-3" id="do_not_give_up"> <span id="user_name"></span> Never giver up, Try it again in <span
+            id="counting_num">7</span> times</label>
+      </div>
+
+      <div id="no-giving-up" class="col no-giving-up">
+        <label>No more giving up <span id="no-giving-up-counter">0</span> </label>
+      </div>
+
+
+
+
+      <div id="hint" class="col hint">
+        <label class="mt-3" id="gaveup">Word Starts: <span style="color: white; font-weight: bold;"
+            id="hint_ans"></span></label>
+      </div>
+
+      <div id="no-more-give-up" class="no-more-give-up mt-2">
+        <label class="mt-3" id="no-more-give-up1"> <span id="player_name"></span> No more giving up left, either make
+          brain storming or restart.</label>
+      </div>
+
+      <div style="display: none;" id="try-one-answer" class="try-one-answer mt-2">
+        <label class="mt-3" id="no-more-give-up1"> <span id="player_name"></span>Please make brain-storming and type an answer.</label>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="col d-none">
+    <input type="text" class="form-control  question-input" id="hi" name="hi2" value="Fahad"
+      aria-describedby="emailHelp">
+  </div>
+
+  <div id="give-up-counter">
+
+  </div>
+
+  <!-- Display result -->
+
+  <div class="container-md  result-container-main mt-2">
+    <div class="row ">
+      <div class="col ">
+        <h4 class="text-center mt-2"> <span id="user_name">Dear User</span> </h4>
+        <h6 class="ms-2">Your results</h6>
+        <div class="col question_label result-container mb-5">
+
+          <div id="question_label_text" class="question-text ms-4 mt-3 ">
+
+            <div id="" class="text-dark results">Total questions: <span>20</span> </div>
+            <div id="correct_answer" class="text-dark results">Correct answered: <span id="correct_answer_text">0</span>
+            </div>
+            <div id="count_incorrect_answer" class="text-dark results">Wrong answered: <span
+                id="count_incorrect_answer_text">0</span> </div>
+            <div id="count_hints" class="text-dark results">Hint answers: <span id="count_hints_text">0</span> </div>
+            <div id="count_give_ups" class="text-dark results">Give up times: <span id="count_give_ups_text">0</span>
+            </div>
+            <div id="points" class="text-dark results">Points: <span id="points_text">0</span> </div>
+            <div id="calculate_score" class="text-dark results">Your score: <span
+                id="calculate_score_text">0</span><span>%</span> </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: none;" class="container-md mb-4 try-again-btn">
+    <div class="row mt-3">
+      <div class="col text-end">
+        <button onclick="window.location.reload()" type="button" id="checkAnsbtn"
+          class="btn btn-success rounded-pill">Let me try it agin</button>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row mt-4 justify-content-end">
+      <div class="col-8 text-end ">
+        
+      </div>
+    </div> -->
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <!-- bootstrap 5 js -->
+
+  <script src="js.js"></script>
+</body>
+
+</html>

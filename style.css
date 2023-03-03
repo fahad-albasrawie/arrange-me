@@ -1,0 +1,140 @@
+
+
+.logo-name{
+    color: #0085FF;
+    font-weight: bold;
+}
+
+.navbar{
+    box-shadow: 2px 1px 2px 2px rgb(231, 231, 231);
+    background-color: rgb(245, 245, 245);
+}
+
+.choose-language-btn{
+    background-color: #005A6D;
+    border: none;
+}
+
+.choose-language-btn:hover{
+    background-color: #04697e;
+}
+
+.menu-option{
+    background-color: #005A6D;
+}
+
+
+.menu-items{
+    background-color: #0dcaf0!important
+}
+
+
+.question-container{
+    margin-left: 1px;
+    padding: 40px 30px 40px 30px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+}
+
+.question_label{
+    padding: 10px 0 15px 0;
+    background-color: #fff;
+}
+
+.question-text{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.question-input{
+    height: 55px;
+    border-radius: 0;
+}
+
+.give-up-btn{
+    /* border: 1px solid rgb(211, 211, 211); */
+    background-color: #d6d6d6;
+}
+
+/* .give-up-btn:active{
+    border: none;
+    background-color: #fff;
+}
+
+.give-up-btn:focus{
+    border: none;
+    background-color: #fff;
+} */
+
+.correct_answer, 
+.incorrect_answer,
+.enter_answer,
+.counting,
+.hint,
+.no-more-give-up,
+.no-giving-up{
+display: none
+}
+
+/* #198754; */
+.correct_answer{
+    background-color: #3ccc89;
+    border-radius: 50px;
+    padding-top: 5px;
+    color: #004424;
+    font-weight: bold;
+}
+.incorrect_answer,
+.enter_answer{
+    background-color: #e76464;
+    border-radius: 50px;
+    padding-top: 5px;
+    color: #440000;
+    font-weight: bold;
+}
+
+#gaveup, #do_not_give_up,
+#no-more-give-up1{
+    margin-right: 5px;
+    border-radius: 50px;
+    font-size: 13px;
+    padding: 0 10px 0 10px;
+}
+
+
+#do_not_give_up{
+    background-color: orange;
+    
+}
+#gaveup{
+    background-color: rgb(29, 29, 29);
+    color: rgb(134, 134, 134);
+}
+
+/* .hint{
+    
+} */
+
+.results{
+    font-size: 13px;
+}
+
+
+#no-more-give-up1{
+    background-color: rgb(240, 113, 113);
+    color: #570000;
+    font-weight: bold;
+}
+
+
+/* ======================== Dispaly ersult section ==================== */
+.result-container-main{
+    display: none;
+    background-color: rgb(231, 231, 231);
+    border-radius: 20px;
+}
+
+.result-container{
+    margin: 0 10px 0 10px;
+}
